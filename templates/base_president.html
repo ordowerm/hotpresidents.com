@@ -27,8 +27,6 @@
 
 <style>
 
-
-
 img {
   max-width: 100%;
   max-height: 300px;
@@ -52,6 +50,20 @@ h3 {
   margin-bottom: .2em;
 }
 
+subtitle {
+  font-family: 'Exo 2', sans-serif;
+  position: relative;
+  bottom: 0px;
+  font-size: 1.2em;
+  color: #213939;
+  margin-bottom: .2em;
+}
+
+emphasis {
+  font-family: 'Exo 2', sans-serif;
+  font-size:2.5em;
+}
+
 p {
   font-family: 'Exo 2', sans-serif;
   font-size: 1.3em;
@@ -59,11 +71,20 @@ p {
   color: #213939;
 }
 
-hot {
-  color: #f11e4f;
+
+@keyframes hotanimation {
+  0%   {color: red;}
+  75%  {color: orange;}
+  100%  {color:red;}
 }
 
-nothot{
+.hot {
+  animation-name: hotanimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.nothot{
   color: #6ead4e;
 }
 
@@ -74,20 +95,11 @@ normalText {
   font-size: 2em;
 }
 
-
-hotness {
+#score-container{
   font-family: 'Exo 2', sans-serif;
-  position: relative;
-  bottom: 25px;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #f11e4f;
-}
-
-notness {
-  font-family: 'Exo 2', sans-serif;
-  position: relative;
-  bottom: 25px;
-  font-size: 2em;
+  margin-bottom: .2em;
 }
 
 
@@ -108,7 +120,10 @@ notness {
 }
 
 #button-container{
-  display: flex;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+
   padding: 30px;
   text-align: center;
   justify-content: center;
@@ -141,6 +156,35 @@ notness {
     background: #b3e1ff;
 }
 
+/*
+Used for responsive purposes
+Based on w3schools.com tutorials.
+*/
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+[class*="col-"] {
+  float: left;
+  padding: 5px;
+}
+
+.bottom-text-element{
+  font-size: 1em;
+}
 </style>
 
 </html>
