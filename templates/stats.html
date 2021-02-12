@@ -1,19 +1,28 @@
 {% extends "base_president.html" %}
 {% block content %}
     <div id="img-container">
-      <img src="{{ image_url }}" alt="A photo of {{ name }}"> 
+      <img src="{{ image_url }}" alt="A photo of {{ name }}">
     </div>
 
     <div id="subtext-container">
       <h2>{{ name }}</h2>
 
-      {% if not > hot %}
-      <h3>Notus</h3>
+      <h3>Consensus: {% if not > hot %}
+      <nothot>NOTus</nothot>
       {% else %}
-      <h3>Hotus</h3>
-      {% endif %}
+      <hot>HOTus</hot>
+      {% endif %} </h3>
 
+      <h3>Score:</h3>
     </div>
+
+    <!--
+    <div class="row" id="score-display">
+      <div class="col-4">🔥{{ hot }}</div>
+      <div class="col-4"></div>
+      <div class="col-4">🤮{{ not }}</div>
+    </div>
+    -->
 
     <div id="button-container">
       <div id="button-inner">
